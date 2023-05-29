@@ -1,20 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <View className="flex-1 bg-gray-900 justify-between items-center">
+      {/* Menu Section */}
+      <View className="" />
+      {/* Row indicator */}
+      <Text className="text-gray-200 text-9xl">0</Text>
+      {/* Buttons */}
+      <View className="flex-row items-center justify-between w-full px-6 py-4">
+        <TouchableOpacity className="rounded-full bg-blue-400 w-24 h-24 items-center justify-center">
+          <Text className="text-gray-200 text-6xl leading-none">-</Text>
+        </TouchableOpacity>
+        <TouchableOpacity className="rounded-full bg-blue-400 w-24 h-24 items-center justify-center">
+          <Text className="text-gray-200 text-6xl leading-none">+</Text>
+        </TouchableOpacity>
+      </View>
       <StatusBar style="auto" />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
