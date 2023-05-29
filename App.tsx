@@ -17,7 +17,7 @@ export default function App() {
           <Text className="text-gray-200 text-6xl leading-none">+</Text>
         </TouchableOpacity>
       </View>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
     </View>
   );
 }
