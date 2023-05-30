@@ -6,10 +6,12 @@ import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/
 
 import {MinusButton, PlusButton} from './app/components/buttons';
 import ThemeSwitcher from './app/components/theme-switcher';
+import { useColorScheme } from 'nativewind';
 
 
 export default function App() {
   const [count, setCount] = useState(0);
+  const { colorScheme } = useColorScheme()
   const [fontsLoaded] = useFonts({
     Roboto_400Regular,
     Roboto_700Bold,
@@ -42,7 +44,7 @@ export default function App() {
         <MinusButton onPress={() => handleDecrement()} />
         <PlusButton onPress={handleIncrement} />
       </View>
-      <StatusBar style="light" />
+      <StatusBar style={colorScheme === 'light' ? 'dark' : 'light'} />
     </SafeAreaView>
   );
 }
