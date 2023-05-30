@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto'
 
 import {MinusButton, PlusButton} from './app/components/buttons';
@@ -27,7 +28,7 @@ export default function App() {
   if (!fontsLoaded) return null;
 
   return (
-    <View className="flex-1 bg-stone-400 dark:bg-gray-900 justify-between items-center">
+    <SafeAreaView className="flex-1 bg-stone-400 dark:bg-gray-900 justify-between items-center">
       {/* Menu Section */}
       <View className="w-full">
         <ThemeSwitcher />
@@ -42,6 +43,6 @@ export default function App() {
         <PlusButton onPress={handleIncrement} />
       </View>
       <StatusBar style="light" />
-    </View>
+    </SafeAreaView>
   );
 }
