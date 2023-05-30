@@ -4,6 +4,7 @@ import { Text, View } from 'react-native';
 import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto'
 
 import {MinusButton, PlusButton} from './app/components/buttons';
+import ThemeSwitcher from './app/components/theme-switcher';
 
 
 export default function App() {
@@ -26,12 +27,14 @@ export default function App() {
   if (!fontsLoaded) return null;
 
   return (
-    <View className="flex-1 bg-gray-900 justify-between items-center">
+    <View className="flex-1 bg-stone-400 dark:bg-gray-900 justify-between items-center">
       {/* Menu Section */}
-      <View className="" />
+      <View className="w-full">
+        <ThemeSwitcher />
+      </View>
 
       {/* Row indicator */}
-      <Text className="text-gray-200 text-9xl font-title">{count}</Text>
+      <Text className="text-gray-900 dark:text-gray-200 text-9xl font-title">{count}</Text>
 
       {/* Buttons */}
       <View className="flex-row items-center justify-between w-full px-6 py-4">
