@@ -2,7 +2,12 @@
 module.exports = {
   content: ['./App.tsx', './app/**/*.tsx'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        title: 'Roboto_700Bold',
+        normal: 'Roboto_400Regular',
+      },
+    },
   },
   plugins: [],
 };
