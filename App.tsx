@@ -1,11 +1,17 @@
 import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Text, View } from 'react-native';
+import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto'
 
 import {MinusButton, PlusButton} from './app/components/buttons';
 
+
 export default function App() {
   const [count, setCount] = useState(0);
+  const [fontsLoaded] = useFonts({
+    Roboto_400Regular,
+    Roboto_700Bold,
+  })
 
   const handleIncrement = () => {
     setCount(oldState => oldState < 999 ? oldState + 1 : 0)
@@ -17,7 +23,7 @@ export default function App() {
     }
   }
 
-  console.log('count', count)
+  if (!fontsLoaded) return null;
 
   return (
     <View className="flex-1 bg-gray-900 justify-between items-center">
@@ -25,7 +31,7 @@ export default function App() {
       <View className="" />
 
       {/* Row indicator */}
-      <Text className="text-gray-200 text-9xl">{count}</Text>
+      <Text className="text-gray-200 text-9xl font-title">{count}</Text>
 
       {/* Buttons */}
       <View className="flex-row items-center justify-between w-full px-6 py-4">
