@@ -10,7 +10,12 @@ export default function ThemeSwitcher() {
 
   return (
     <View>
-      <Switch value={colorScheme === 'dark'} onChange={handleSwitch} />
+      <Switch
+        value={colorScheme === 'dark'}
+        onChange={handleSwitch}
+        thumbColor={colorScheme === 'light' ? '#fde047' : '#e7e5e4'}
+        trackColor={{ false: '#fef9c3', true : '#0c4a6e' }}
+      />
     </View>
   )
 }
